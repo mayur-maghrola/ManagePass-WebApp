@@ -4,13 +4,27 @@
   align-items: center;
   background-color: #f8fafc;
   padding: 15px;
-  margin: 10px 0;
   border-radius: 8px;
+  width: 100%;
+  border: 1px solid #e2e8f0;
+}
+
+@media screen and (min-width: 768px) {
+  .password-item {
+    width: calc(50% - 7.5px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .password-item {
+    width: calc(33.33% - 10px);
+  }
 }
 
 .left-section {
   display: flex;
   align-items: center;
+  max-width: 85%;
 }
 
 .avatar {
@@ -19,6 +33,7 @@
   font-weight: bold;
   height: 40px;
   width: 40px;
+  min-width: 40px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -29,24 +44,34 @@
 .details {
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .website {
   font-weight: 600;
   margin: 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .username {
   color: #64748b;
   margin: 2px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
 }
 
 .password {
   margin: 2px 0;
+  font-size: 14px;
+  word-break: break-all;
 }
 
 .stars {
-  width: 120px;
+  width: 80px;
   margin-top: 5px;
 }
 
@@ -54,6 +79,10 @@
   background: transparent;
   border: none;
   cursor: pointer;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .delete-btn img {
